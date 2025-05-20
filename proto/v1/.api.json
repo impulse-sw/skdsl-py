@@ -1,0 +1,751 @@
+{
+  "type_definitions": {
+    "HelloData": {
+      "name": "HelloData",
+      "definition": "crate::api::types::HelloData",
+      "is_alias": false,
+      "py_type_str": "HelloData",
+      "py_import_stmt": "from crate.api.types import HelloData",
+      "pydantic_model_def": null
+    },
+    "AnswerData": {
+      "name": "AnswerData",
+      "definition": "crate::api::types::AnswerData",
+      "is_alias": false,
+      "py_type_str": "AnswerData",
+      "py_import_stmt": "from crate.api.types import AnswerData",
+      "pydantic_model_def": null
+    },
+    "UserChangePassReq": {
+      "name": "UserChangePassReq",
+      "definition": "crate::api::types::UserChangePasswordRequest",
+      "is_alias": false,
+      "py_type_str": "UserChangePassReq",
+      "py_import_stmt": "from crate.api.types import UserChangePasswordRequest as UserChangePassReq",
+      "pydantic_model_def": null
+    },
+    "ComplexAliasType": {
+      "name": "ComplexAliasType",
+      "definition": "HashMap<String, u32>",
+      "is_alias": true,
+      "py_type_str": "ComplexAliasType = Dict[str, int]",
+      "py_import_stmt": null,
+      "pydantic_model_def": null
+    },
+    "ChatData": {
+      "name": "ChatData",
+      "definition": "crate::api::types::ChatData",
+      "is_alias": false,
+      "py_type_str": "ChatData",
+      "py_import_stmt": "from crate.api.types import ChatData",
+      "pydantic_model_def": null
+    }
+  },
+  "complex_requirements": {
+    "tokens": {
+      "name": "tokens",
+      "is_hidden_openapi": false,
+      "header_params": [
+        {
+          "param_type": "header",
+          "name": "X-Access",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        },
+        {
+          "param_type": "header",
+          "name": "X-Refresh",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        },
+        {
+          "param_type": "header",
+          "name": "X-Client",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        }
+      ],
+      "query_params": [],
+      "cookie_params": [],
+      "response_headers": [],
+      "response_cookies": []
+    },
+    "master": {
+      "name": "master",
+      "is_hidden_openapi": false,
+      "header_params": [
+        {
+          "param_type": "header",
+          "name": "X-Access",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        },
+        {
+          "param_type": "header",
+          "name": "X-Refresh",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        },
+        {
+          "param_type": "header",
+          "name": "X-Client",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        }
+      ],
+      "query_params": [],
+      "cookie_params": [],
+      "response_headers": [
+        {
+          "param_type": "header",
+          "name": "X-Sign",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        }
+      ],
+      "response_cookies": []
+    },
+    "slave": {
+      "name": "slave",
+      "is_hidden_openapi": true,
+      "header_params": [],
+      "query_params": [],
+      "cookie_params": [
+        {
+          "param_type": "cookie",
+          "name": "gitlab_session",
+          "dsl_type": "str",
+          "py_type": "str",
+          "is_hidden": false,
+          "content_type": null,
+          "is_rest_path": false
+        }
+      ],
+      "response_headers": [],
+      "response_cookies": []
+    }
+  },
+  "tags": [
+    {
+      "name": "users",
+      "py_module_name": "users.py",
+      "complex_req_names": [],
+      "endpoints": [
+        {
+          "raw_definition": "api post/sign-in h/str/X-Sign b/json/HelloData q/i64/user_id                                        -> b/json/AnswerData",
+          "is_hidden_openapi": false,
+          "http_method": "post",
+          "path_template": "/sign-in",
+          "path_params": [],
+          "query_params": [
+            {
+              "param_type": "query",
+              "name": "user_id",
+              "dsl_type": "i64",
+              "py_type": "int",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Sign",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "cookie_params": [],
+          "form_params": [],
+          "request_body": {
+            "body_type": "json",
+            "dsl_type": "HelloData",
+            "py_type": "HelloData",
+            "file_form_key": null
+          },
+          "response_body": {
+            "body_type": "json",
+            "dsl_type": "AnswerData",
+            "py_type": "AnswerData",
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [],
+          "func_name": "post_sign-in",
+          "complex_req_names": [],
+          "final_path_params": [],
+          "final_query_params": [
+            {
+              "param_type": "query",
+              "name": "user_id",
+              "dsl_type": "i64",
+              "py_type": "int",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Sign",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_cookie_params": [],
+          "final_form_params": [],
+          "final_request_body": {
+            "body_type": "json",
+            "dsl_type": "HelloData",
+            "py_type": "HelloData",
+            "file_form_key": null
+          },
+          "final_response_body": {
+            "body_type": "json",
+            "dsl_type": "AnswerData",
+            "py_type": "AnswerData",
+            "file_form_key": null
+          },
+          "final_response_headers": [],
+          "final_response_cookies": []
+        },
+        {
+          "raw_definition": "api patch/change-password h/str/X-Access h/str/X-Refresh h/str/X-Client b/msgpack/UserChangePassReq -> ok",
+          "is_hidden_openapi": false,
+          "http_method": "patch",
+          "path_template": "/change-password",
+          "path_params": [],
+          "query_params": [],
+          "header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Access",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Refresh",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Client",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "cookie_params": [],
+          "form_params": [],
+          "request_body": {
+            "body_type": "msgpack",
+            "dsl_type": "UserChangePassReq",
+            "py_type": "UserChangePassReq",
+            "file_form_key": null
+          },
+          "response_body": {
+            "body_type": "ok",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [],
+          "func_name": "patch_change-password",
+          "complex_req_names": [],
+          "final_path_params": [],
+          "final_query_params": [],
+          "final_header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Access",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Refresh",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Client",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_cookie_params": [],
+          "final_form_params": [],
+          "final_request_body": {
+            "body_type": "msgpack",
+            "dsl_type": "UserChangePassReq",
+            "py_type": "UserChangePassReq",
+            "file_form_key": null
+          },
+          "final_response_body": {
+            "body_type": "ok",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": null
+          },
+          "final_response_headers": [],
+          "final_response_cookies": []
+        }
+      ]
+    },
+    {
+      "name": "chat",
+      "py_module_name": "chat.py",
+      "complex_req_names": [
+        "tokens"
+      ],
+      "endpoints": [
+        {
+          "raw_definition": "api get/chats q/i64/chat_id                       -> b/json/Vec<ChatData>",
+          "is_hidden_openapi": false,
+          "http_method": "get",
+          "path_template": "/chats",
+          "path_params": [],
+          "query_params": [
+            {
+              "param_type": "query",
+              "name": "chat_id",
+              "dsl_type": "i64",
+              "py_type": "int",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "header_params": [],
+          "cookie_params": [],
+          "form_params": [],
+          "request_body": null,
+          "response_body": {
+            "body_type": "json",
+            "dsl_type": "Vec<ChatData>",
+            "py_type": "List[ChatData]",
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [],
+          "func_name": "get_chats",
+          "complex_req_names": [],
+          "final_path_params": [],
+          "final_query_params": [
+            {
+              "param_type": "query",
+              "name": "chat_id",
+              "dsl_type": "i64",
+              "py_type": "int",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Access",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Refresh",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Client",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_cookie_params": [],
+          "final_form_params": [],
+          "final_request_body": null,
+          "final_response_body": {
+            "body_type": "json",
+            "dsl_type": "Vec<ChatData>",
+            "py_type": "List[ChatData]",
+            "file_form_key": null
+          },
+          "final_response_headers": [],
+          "final_response_cookies": []
+        },
+        {
+          "raw_definition": "api get/chat/{u64/id}                             -> b/json/ChatData",
+          "is_hidden_openapi": false,
+          "http_method": "get",
+          "path_template": "/chat/{u64/id}",
+          "path_params": [],
+          "query_params": [],
+          "header_params": [],
+          "cookie_params": [],
+          "form_params": [],
+          "request_body": null,
+          "response_body": {
+            "body_type": "json",
+            "dsl_type": "ChatData",
+            "py_type": "ChatData",
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [],
+          "func_name": "get_chat_u64_id",
+          "complex_req_names": [],
+          "final_path_params": [],
+          "final_query_params": [],
+          "final_header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Access",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Refresh",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Client",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_cookie_params": [],
+          "final_form_params": [],
+          "final_request_body": null,
+          "final_response_body": {
+            "body_type": "json",
+            "dsl_type": "ChatData",
+            "py_type": "ChatData",
+            "file_form_key": null
+          },
+          "final_response_headers": [],
+          "final_response_cookies": []
+        },
+        {
+          "raw_definition": "api post/chat/{u64/id}/audio-request b/file/audio -> ok",
+          "is_hidden_openapi": false,
+          "http_method": "post",
+          "path_template": "/chat/{u64/id}/audio-request",
+          "path_params": [],
+          "query_params": [],
+          "header_params": [],
+          "cookie_params": [],
+          "form_params": [],
+          "request_body": {
+            "body_type": "file",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": "audio"
+          },
+          "response_body": {
+            "body_type": "ok",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [],
+          "func_name": "post_chat_u64_id_audio-request",
+          "complex_req_names": [],
+          "final_path_params": [],
+          "final_query_params": [],
+          "final_header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Access",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Refresh",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Client",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_cookie_params": [],
+          "final_form_params": [],
+          "final_request_body": {
+            "body_type": "file",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": "audio"
+          },
+          "final_response_body": {
+            "body_type": "ok",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": null
+          },
+          "final_response_headers": [],
+          "final_response_cookies": []
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "py_module_name": "test.py",
+      "complex_req_names": [],
+      "endpoints": [
+        {
+          "raw_definition": "api req/master get/test                   -> ok c/X-Sign",
+          "is_hidden_openapi": false,
+          "http_method": "get",
+          "path_template": "/test",
+          "path_params": [],
+          "query_params": [],
+          "header_params": [],
+          "cookie_params": [],
+          "form_params": [],
+          "request_body": null,
+          "response_body": {
+            "body_type": "ok",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [
+            {
+              "param_type": "cookie",
+              "name": "X-Sign",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "func_name": "get_test",
+          "complex_req_names": [
+            "master"
+          ],
+          "final_path_params": [],
+          "final_query_params": [],
+          "final_header_params": [
+            {
+              "param_type": "header",
+              "name": "X-Access",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Refresh",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            },
+            {
+              "param_type": "header",
+              "name": "X-Client",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_cookie_params": [],
+          "final_form_params": [],
+          "final_request_body": null,
+          "final_response_body": {
+            "body_type": "ok",
+            "dsl_type": null,
+            "py_type": null,
+            "file_form_key": null
+          },
+          "final_response_headers": [
+            {
+              "param_type": "header",
+              "name": "X-Sign",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_response_cookies": [
+            {
+              "param_type": "cookie",
+              "name": "X-Sign",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ]
+        },
+        {
+          "raw_definition": "api req/slave  post/audio f/Vec<u8>/audio -> b/msgpack/ComplexAliasType",
+          "is_hidden_openapi": false,
+          "http_method": "post",
+          "path_template": "/audio",
+          "path_params": [],
+          "query_params": [],
+          "header_params": [],
+          "cookie_params": [],
+          "form_params": [
+            {
+              "param_type": "form_param",
+              "name": "audio",
+              "dsl_type": "Vec<u8>",
+              "py_type": "List[int]",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "request_body": null,
+          "response_body": {
+            "body_type": "msgpack",
+            "dsl_type": "ComplexAliasType",
+            "py_type": "ComplexAliasType",
+            "file_form_key": null
+          },
+          "response_headers": [],
+          "response_cookies": [],
+          "func_name": "post_audio",
+          "complex_req_names": [
+            "slave"
+          ],
+          "final_path_params": [],
+          "final_query_params": [],
+          "final_header_params": [],
+          "final_cookie_params": [
+            {
+              "param_type": "cookie",
+              "name": "gitlab_session",
+              "dsl_type": "str",
+              "py_type": "str",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_form_params": [
+            {
+              "param_type": "form_param",
+              "name": "audio",
+              "dsl_type": "Vec<u8>",
+              "py_type": "List[int]",
+              "is_hidden": false,
+              "content_type": null,
+              "is_rest_path": false
+            }
+          ],
+          "final_request_body": null,
+          "final_response_body": {
+            "body_type": "msgpack",
+            "dsl_type": "ComplexAliasType",
+            "py_type": "ComplexAliasType",
+            "file_form_key": null
+          },
+          "final_response_headers": [],
+          "final_response_cookies": []
+        }
+      ]
+    }
+  ],
+  "pydantic_models_code": "from pydantic import BaseModel\nfrom typing import List, Dict, Optional, Any\n\n",
+  "type_aliases_code": "from typing import List, Dict, Optional, Any\n\n\nComplexAliasType = Dict[str, int]",
+  "custom_imports_code": "from crate.api.types import AnswerData\nfrom crate.api.types import ChatData\nfrom crate.api.types import HelloData\nfrom crate.api.types import UserChangePasswordRequest as UserChangePassReq"
+}
